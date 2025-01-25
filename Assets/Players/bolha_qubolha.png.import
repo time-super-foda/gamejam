@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxo1gid0hkq1u"
-path="res://.godot/imported/bolha_qubolha.png-1df83e787eb212984460c295bd3e5192.ctex"
+path="res://.godot/imported/bolha_qubolha.png-e21cbe40f4a77219d1288c05b8748e25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Players/bolha_qubolha.png"
-dest_files=["res://.godot/imported/bolha_qubolha.png-1df83e787eb212984460c295bd3e5192.ctex"]
+source_file="res://Assets/players/bolha_qubolha.png"
+dest_files=["res://.godot/imported/bolha_qubolha.png-e21cbe40f4a77219d1288c05b8748e25.ctex"]
 
 [params]
 
