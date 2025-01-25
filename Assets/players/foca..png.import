@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cam5c32xxukw3"
-path="res://.godot/imported/enemy-placeholder.png-a0f41142c52e545f41c0bdf582baf6fc.ctex"
+uid="uid://m375vp7pgik1"
+path="res://.godot/imported/foca..png-0379a9ae25ff9b96a8c15f929d7907b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/enemy-placeholder.png"
-dest_files=["res://.godot/imported/enemy-placeholder.png-a0f41142c52e545f41c0bdf582baf6fc.ctex"]
+source_file="res://Assets/players/foca..png"
+dest_files=["res://.godot/imported/foca..png-0379a9ae25ff9b96a8c15f929d7907b8.ctex"]
 
 [params]
 
