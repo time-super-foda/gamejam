@@ -1,36 +1,90 @@
-[gd_scene load_steps=6 format=3 uid="uid://i34oo01u074n"]
+[gd_scene load_steps=12 format=3 uid="uid://i34oo01u074n"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ann3i"]
-[ext_resource type="Texture2D" uid="uid://j5ghae60j26e" path="res://Assets/gato_sprite_1.png" id="2_lx5l6"]
+[ext_resource type="Texture2D" uid="uid://m375vp7pgik1" path="res://Assets/players/foca..png" id="2_e86pw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jib3i"]
-atlas = ExtResource("2_lx5l6")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgdce"]
+atlas = ExtResource("2_e86pw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miii8"]
+atlas = ExtResource("2_e86pw")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6g8p"]
+atlas = ExtResource("2_e86pw")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6k7e"]
+atlas = ExtResource("2_e86pw")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03jru"]
+atlas = ExtResource("2_e86pw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_052s3"]
+atlas = ExtResource("2_e86pw")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6d0f"]
+atlas = ExtResource("2_e86pw")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ibin3"]
 animations = [{
 "frames": [{
+"duration": 1.1,
+"texture": SubResource("AtlasTexture_wgdce")
+}, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jib3i")
+"texture": SubResource("AtlasTexture_miii8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6g8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6k7e")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03jru")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_052s3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6d0f")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7teaq"]
-radius = 32.0
-height = 64.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k388f"]
+radius = 24.0
+height = 52.0
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(24, 24)
+position = Vector2(24, 23)
 script = ExtResource("1_ann3i")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_ibin3")
-animation = &"idle"
+animation = &"attack"
+autoplay = "walk"
+frame_progress = 0.623622
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_7teaq")
+position = Vector2(8, 16)
+shape = SubResource("CapsuleShape2D_k388f")
