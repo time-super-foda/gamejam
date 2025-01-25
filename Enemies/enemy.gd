@@ -13,6 +13,5 @@ func _process(delta: float) -> void:
 	if Player:
 		print(Player.position)
 		var direction = (Player.position - position).normalized()
+		print("Direction: ", direction)
 		apply_central_force(direction)
-	else:
-		print('no player')
