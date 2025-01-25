@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpayf5mbhj5yr"]
+[gd_scene load_steps=6 format=3 uid="uid://dpayf5mbhj5yr"]
 
+[ext_resource type="Script" path="res://player_gui.gd" id="1_msa8a"]
 [ext_resource type="Texture2D" uid="uid://jvptms2on18b" path="res://Assets/GUI.png" id="1_o74bh"]
+[ext_resource type="Script" path="res://sprite_2d.gd" id="3_mhms8"]
+[ext_resource type="Script" path="res://score.gd" id="4_gx8l5"]
 
 [sub_resource type="FontFile" id="FontFile_v8geq"]
 cache/0/41/0/ascent = 0.0
@@ -25,6 +28,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+script = ExtResource("1_msa8a")
+Score = Array[int]([1, 2])
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -69,6 +74,7 @@ scale = Vector2(0.857624, 1.00188)
 texture = ExtResource("1_o74bh")
 region_enabled = true
 region_rect = Rect2(72, 22, 49, 3)
+script = ExtResource("3_mhms8")
 
 [node name="HealthContainer2" type="Sprite2D" parent="Panel"]
 position = Vector2(1085, 46)
@@ -87,7 +93,7 @@ flip_h = true
 region_enabled = true
 region_rect = Rect2(72, 6, 42, 3)
 
-[node name="Label3" type="Label" parent="Panel"]
+[node name="Score" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -106,3 +112,4 @@ text = "0 X 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+script = ExtResource("4_gx8l5")
