@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://blmkrc05cflgv"]
+[gd_scene load_steps=7 format=4 uid="uid://blmkrc05cflgv"]
 
 [ext_resource type="PackedScene" uid="uid://nl4jgfownp1a" path="res://Enemies/enemy.tscn" id="1_8od1k"]
+[ext_resource type="PackedScene" uid="uid://dpayf5mbhj5yr" path="res://player_gui.tscn" id="1_twslc"]
 [ext_resource type="PackedScene" uid="uid://i34oo01u074n" path="res://Player/player.tscn" id="1_yo4eq"]
 [ext_resource type="Texture2D" uid="uid://ck73l78ero0je" path="res://Assets/sample_texture.jpeg" id="3_jnh1b"]
 
@@ -30,6 +31,12 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_i5irx")
 
 [node name="MainScene" type="Node2D"]
+
+[node name="PlayerGui" parent="." instance=ExtResource("1_twslc")]
+offset_left = 636.0
+offset_top = 356.0
+offset_right = 636.0
+offset_bottom = 356.0
 
 [node name="Player" parent="." instance=ExtResource("1_yo4eq")]
 position = Vector2(352, 464)
