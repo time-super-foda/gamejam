@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://i34oo01u074n"]
+[gd_scene load_steps=11 format=3 uid="uid://i34oo01u074n"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ann3i"]
 [ext_resource type="Texture2D" uid="uid://m375vp7pgik1" path="res://Assets/players/foca..png" id="2_e86pw"]
@@ -70,21 +70,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k388f"]
-radius = 24.0
-height = 52.0
-
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(24, 23)
+position = Vector2(16, 16)
 script = ExtResource("1_ann3i")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ibin3")
-animation = &"attack"
+animation = &"idle"
 autoplay = "walk"
-frame_progress = 0.623622
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 16)
-shape = SubResource("CapsuleShape2D_k388f")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-1, 4, -3, 5, -6, 8, -6, 12, -5, 14, -3, 15, 9, 15, 11, 14, 12, 12, 14, 12, 14, 10, 13, 8, 10, 8, 10, 7, 8, 5, 5, 4)

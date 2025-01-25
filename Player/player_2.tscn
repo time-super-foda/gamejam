@@ -1,11 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://c1phbld3sfw8a"]
+[gd_scene load_steps=11 format=3 uid="uid://dllld8iv7u1a5"]
 
 [ext_resource type="Script" path="res://Player/player_2.gd" id="1_g2681"]
 [ext_resource type="Texture2D" uid="uid://6tqbeppkvapc" path="res://Assets/players/focazul.png" id="2_ii2vl"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wdf1y"]
-radius = 24.0
-height = 52.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3xy1"]
 atlas = ExtResource("2_ii2vl")
@@ -77,12 +73,11 @@ animations = [{
 [node name="Player2" type="CharacterBody2D"]
 script = ExtResource("1_g2681")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 16)
-shape = SubResource("CapsuleShape2D_wdf1y")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_jhu6m")
 animation = &"idle"
 autoplay = "walk"
+
+[node name="PlayerHitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(15, 20, 13, 21, 10, 24, 10, 28, 11, 30, 13, 31, 25, 31, 27, 30, 28, 28, 30, 28, 30, 26, 29, 24, 26, 24, 26, 23, 24, 21, 21, 20)
