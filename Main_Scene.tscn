@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://blmkrc05cflgv"]
 
-[ext_resource type="PackedScene" uid="uid://nl4jgfownp1a" path="res://Enemies/enemy.tscn" id="1_8od1k"]
 [ext_resource type="Texture2D" uid="uid://bqvkj8684le6o" path="res://Assets/Seasonal TileSet/Seasonal Tilesets/4 - Winter World/Background parts/_Complete_static_BG_(288 x 208).png" id="1_hw5fg"]
-[ext_resource type="PackedScene" path="res://player_gui.tscn" id="1_twslc"]
+[ext_resource type="PackedScene" uid="uid://dpayf5mbhj5yr" path="res://player_gui.tscn" id="1_twslc"]
 [ext_resource type="PackedScene" uid="uid://i34oo01u074n" path="res://Player/player.tscn" id="1_yo4eq"]
+[ext_resource type="PackedScene" uid="uid://c1phbld3sfw8a" path="res://Player/player_2.tscn" id="4_1yjyg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxbwj"]
 size = Vector2(1271, 75)
@@ -26,13 +26,11 @@ metadata/_edit_use_anchors_ = true
 [node name="Player" parent="." instance=ExtResource("1_yo4eq")]
 position = Vector2(363, 508)
 
-[node name="EnemyObj" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("1_8od1k")]
-position = Vector2(755, 332)
-collision_mask = 1
-Player = NodePath("../Player")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(636.5, 684)
 shape = SubResource("RectangleShape2D_dxbwj")
+
+[node name="Player2" parent="." instance=ExtResource("4_1yjyg")]
+position = Vector2(793, 507)
