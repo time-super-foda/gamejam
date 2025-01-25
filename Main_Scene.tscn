@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://nl4jgfownp1a" path="res://Enemies/enemy.tscn" id="1_8od1k"]
 [ext_resource type="Texture2D" uid="uid://bqvkj8684le6o" path="res://Assets/Seasonal TileSet/Seasonal Tilesets/4 - Winter World/Background parts/_Complete_static_BG_(288 x 208).png" id="1_hw5fg"]
-[ext_resource type="PackedScene" path="res://player_gui.tscn" id="1_twslc"]
+[ext_resource type="PackedScene" uid="uid://dpayf5mbhj5yr" path="res://player_gui.tscn" id="1_twslc"]
 [ext_resource type="PackedScene" uid="uid://i34oo01u074n" path="res://Player/player.tscn" id="1_yo4eq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxbwj"]

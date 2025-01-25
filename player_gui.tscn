@@ -6,6 +6,9 @@
 [ext_resource type="Script" path="res://score.gd" id="4_gx8l5"]
 
 [sub_resource type="FontFile" id="FontFile_v8geq"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/41/0/ascent = 0.0
 cache/0/41/0/descent = 0.0
 cache/0/41/0/underline_position = 0.0
