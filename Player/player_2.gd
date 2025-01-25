@@ -17,13 +17,13 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.animation = "idle"
 
 	# Handle jump.
-	if Input.is_action_just_pressed("player1_jump") and is_on_floor():
+	if Input.is_action_just_pressed("player2_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		animated_sprite_2d.animation = "walk"
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("player1_walk_left", "player1_walk_right")
+	var direction := Input.get_axis("player2_walk_left", "player2_walk_right")
 	if direction:
 		velocity.x = direction * SPEED
 		if velocity.x< 0:
@@ -34,5 +34,4 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	var isLeft = velocity.x > 0
-	
+	var isLeft = velocity.x < 0

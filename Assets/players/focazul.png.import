@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cam5c32xxukw3"
-path="res://.godot/imported/enemy-placeholder.png-a0f41142c52e545f41c0bdf582baf6fc.ctex"
+uid="uid://6tqbeppkvapc"
+path="res://.godot/imported/focazul.png-b33b3e3ad31ee7acf94f91c1c02705ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/enemy-placeholder.png"
-dest_files=["res://.godot/imported/enemy-placeholder.png-a0f41142c52e545f41c0bdf582baf6fc.ctex"]
+source_file="res://Assets/players/focazul.png"
+dest_files=["res://.godot/imported/focazul.png-b33b3e3ad31ee7acf94f91c1c02705ea.ctex"]
 
 [params]
 
