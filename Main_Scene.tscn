@@ -1,20 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://blmkrc05cflgv"]
+[gd_scene load_steps=8 format=3 uid="uid://blmkrc05cflgv"]
 
 [ext_resource type="PackedScene" uid="uid://nl4jgfownp1a" path="res://Enemies/enemy.tscn" id="1_8od1k"]
-[ext_resource type="Texture2D" uid="uid://bqvkj8684le6o" path="res://Assets/Seasonal TileSet/Seasonal Tilesets/4 - Winter World/Background parts/_Complete_static_BG_(288 x 208).png" id="1_hw5fg"]
 [ext_resource type="PackedScene" path="res://player_gui.tscn" id="1_twslc"]
 [ext_resource type="PackedScene" uid="uid://i34oo01u074n" path="res://Player/player.tscn" id="1_yo4eq"]
+[ext_resource type="Texture2D" uid="uid://cfv0j27fps3ug" path="res://Assets/Seasonal TileSet/Seasonal Tilesets/4 - Winter World/Background parts/3 - Big_mountain_BG.png" id="4_bt2xi"]
+[ext_resource type="Texture2D" uid="uid://c0tlxj6lyqg4t" path="res://Assets/Seasonal TileSet/Seasonal Tilesets/4 - Winter World/Background parts/2 - Smaller_mountains.png" id="5_s1jjk"]
+[ext_resource type="Texture2D" uid="uid://bpsx7q1aaw6kw" path="res://Assets/Seasonal TileSet/Seasonal Tilesets/4 - Winter World/Background parts/1 - Snowy_foreground_area.png" id="6_ewcoc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxbwj"]
 size = Vector2(1271, 75)
 
 [node name="MainScene" type="Node2D"]
 position = Vector2(3, 3)
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1275.0
-offset_bottom = 723.0
-texture = ExtResource("1_hw5fg")
 
 [node name="PlayerGui" parent="." instance=ExtResource("1_twslc")]
 offset_left = 636.0
@@ -36,3 +33,31 @@ Player = NodePath("../Player")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(636.5, 684)
 shape = SubResource("RectangleShape2D_dxbwj")
+
+[node name="BG" type="ParallaxBackground" parent="."]
+
+[node name="3" type="ParallaxLayer" parent="BG"]
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/3"]
+position = Vector2(-0.999998, 0)
+scale = Vector2(4.45486, 3.13942)
+texture = ExtResource("4_bt2xi")
+centered = false
+
+[node name="2" type="ParallaxLayer" parent="BG"]
+motion_mirroring = Vector2(416, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/2"]
+position = Vector2(2, 96)
+scale = Vector2(3, 3)
+texture = ExtResource("5_s1jjk")
+centered = false
+
+[node name="1" type="ParallaxLayer" parent="BG"]
+motion_mirroring = Vector2(437, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/1"]
+position = Vector2(-1, 92)
+scale = Vector2(3, 3)
+texture = ExtResource("6_ewcoc")
+centered = false
