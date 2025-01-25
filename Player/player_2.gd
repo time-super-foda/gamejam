@@ -1,5 +1,6 @@
 extends CharacterBody2D
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var player_sprite: AnimatedSprite2D = $PlayerSprite
+
 
 
 const SPEED = 300.0
@@ -13,9 +14,9 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 		
 	if (velocity.x > 1 || velocity.x < -1):
-		animated_sprite_2d.animation = "walk"
+		player_sprite.animation = "walk"
 	else:
-		animated_sprite_2d.animation = "idle"
+		player_sprite.animation = "idle"
 
 	# Handle jump.
 	if Input.is_action_just_pressed("player2_jump") and is_on_floor():
@@ -27,9 +28,9 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 		if velocity.x< 0:
-			animated_sprite_2d.flip_h = false
+			player_sprite.flip_h = false
 		if velocity.x>0:
-			animated_sprite_2d.flip_h = true
+			player_sprite.flip_h = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
