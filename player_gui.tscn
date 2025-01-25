@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dpayf5mbhj5yr"]
 
 [ext_resource type="Script" path="res://player_gui.gd" id="1_msa8a"]
-[ext_resource type="Texture2D" uid="uid://jvptms2on18b" path="res://Assets/GUI.png" id="1_o74bh"]
-[ext_resource type="Script" path="res://sprite_2d.gd" id="3_mhms8"]
+[ext_resource type="Texture2D" uid="uid://c24721jxto8hm" path="res://Assets/Bar/Pixel1_Healthbar_0002_pixel1_border.png" id="3_1kl6o"]
 [ext_resource type="Script" path="res://score.gd" id="4_gx8l5"]
+[ext_resource type="Texture2D" uid="uid://br8uns64e5ehb" path="res://Assets/Bar/Pixel1_Healthbar_0001_pixel1_healthbar.png" id="4_j52il"]
 
 [sub_resource type="FontFile" id="FontFile_v8geq"]
 subpixel_positioning = 0
@@ -63,39 +63,6 @@ text = "Player 2
 "
 horizontal_alignment = 2
 
-[node name="HealthContainer" type="Sprite2D" parent="Panel"]
-position = Vector2(192, 48)
-scale = Vector2(8.48333, 6.32143)
-texture = ExtResource("1_o74bh")
-region_enabled = true
-region_rect = Rect2(135, 4, 45, 7)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Panel/HealthContainer"]
-position = Vector2(-0.50098, -2.27243e-07)
-scale = Vector2(0.857624, 1.00188)
-texture = ExtResource("1_o74bh")
-region_enabled = true
-region_rect = Rect2(72, 22, 49, 3)
-script = ExtResource("3_mhms8")
-
-[node name="HealthContainer2" type="Sprite2D" parent="Panel"]
-position = Vector2(1085, 46)
-scale = Vector2(8.483, 6.321)
-texture = ExtResource("1_o74bh")
-flip_h = true
-region_enabled = true
-region_rect = Rect2(135, 4, 45, 7)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Panel/HealthContainer2"]
-position = Vector2(0.47153, 0)
-scale = Vector2(0.999197, 1)
-texture = ExtResource("1_o74bh")
-flip_h = true
-region_enabled = true
-region_rect = Rect2(72, 6, 42, 3)
-
 [node name="Score" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
@@ -116,3 +83,29 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 script = ExtResource("4_gx8l5")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -17.0
+offset_top = -173.0
+offset_right = 667.0
+offset_bottom = 101.0
+value = 25.0
+nine_patch_stretch = true
+texture_over = ExtResource("3_1kl6o")
+texture_progress = ExtResource("4_j52il")
+texture_progress_offset = Vector2(0, 37.325)
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="Panel"]
+texture_filter = 1
+offset_left = 798.0
+offset_top = -173.0
+offset_right = 1482.0
+offset_bottom = 101.0
+step = -1.0
+value = 25.0
+nine_patch_stretch = true
+texture_over = ExtResource("3_1kl6o")
+texture_progress = ExtResource("4_j52il")
+texture_progress_offset = Vector2(0, 37.325)

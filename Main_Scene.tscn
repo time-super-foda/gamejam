@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://blmkrc05cflgv"]
+[gd_scene load_steps=7 format=3 uid="uid://blmkrc05cflgv"]
 
-[ext_resource type="PackedScene" uid="uid://nl4jgfownp1a" path="res://Enemies/enemy.tscn" id="1_8od1k"]
-[ext_resource type="PackedScene" path="res://player_gui.tscn" id="1_twslc"]
+[ext_resource type="PackedScene" uid="uid://dpayf5mbhj5yr" path="res://player_gui.tscn" id="1_twslc"]
 [ext_resource type="PackedScene" uid="uid://i34oo01u074n" path="res://Player/player.tscn" id="1_yo4eq"]
 [ext_resource type="Texture2D" uid="uid://cfv0j27fps3ug" path="res://Assets/Seasonal TileSet/Seasonal Tilesets/4 - Winter World/Background parts/3 - Big_mountain_BG.png" id="4_bt2xi"]
 [ext_resource type="Texture2D" uid="uid://c0tlxj6lyqg4t" path="res://Assets/Seasonal TileSet/Seasonal Tilesets/4 - Winter World/Background parts/2 - Smaller_mountains.png" id="5_s1jjk"]
