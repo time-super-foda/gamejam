@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1phbld3sfw8a"]
+[gd_scene load_steps=11 format=3 uid="uid://dllld8iv7u1a5"]
 
 [ext_resource type="Script" path="res://Player/player_2.gd" id="1_g2681"]
 [ext_resource type="Texture2D" uid="uid://6tqbeppkvapc" path="res://Assets/Players/focazul.png" id="2_ii2vl"]

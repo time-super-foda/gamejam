@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://blmkrc05cflgv"]
+[gd_scene load_steps=10 format=4 uid="uid://blmkrc05cflgv"]
 
 [ext_resource type="Texture2D" uid="uid://cbcg7d4arb7fh" path="res://Assets/Praia/praia_fundo.png" id="1_eodf0"]
 [ext_resource type="PackedScene" uid="uid://dpayf5mbhj5yr" path="res://player_gui.tscn" id="1_twslc"]
 [ext_resource type="PackedScene" uid="uid://i34oo01u074n" path="res://Player/player.tscn" id="1_yo4eq"]
 [ext_resource type="Texture2D" uid="uid://x2jt7posfvwt" path="res://Assets/Praia/praia_1.png" id="2_inlyo"]
-[ext_resource type="PackedScene" uid="uid://c1phbld3sfw8a" path="res://Player/player_2.tscn" id="4_1yjyg"]
+[ext_resource type="PackedScene" uid="uid://dllld8iv7u1a5" path="res://Player/player_2.tscn" id="4_1yjyg"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="7_s2q6g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebj7w"]
 texture = ExtResource("2_inlyo")
@@ -76,11 +77,16 @@ metadata/_edit_use_anchors_ = true
 [node name="Player" parent="." instance=ExtResource("1_yo4eq")]
 position = Vector2(363, 508)
 
+[node name="Player2" parent="." instance=ExtResource("4_1yjyg")]
+position = Vector2(793, 507)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(639, 705.25)
 shape = SubResource("RectangleShape2D_dxbwj")
 
-[node name="Player2" parent="." instance=ExtResource("4_1yjyg")]
-position = Vector2(793, 507)
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("7_s2q6g")
+player1_path = NodePath("../Player")
+player2_path = NodePath("../Player2")
