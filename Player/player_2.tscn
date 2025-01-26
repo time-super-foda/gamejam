@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dllld8iv7u1a5"]
+[gd_scene load_steps=11 format=3 uid="uid://c1phbld3sfw8a"]
 
 [ext_resource type="Script" path="res://Player/player_2.gd" id="1_g2681"]
 [ext_resource type="Texture2D" uid="uid://6tqbeppkvapc" path="res://Assets/players/focazul.png" id="2_ii2vl"]
@@ -81,3 +81,6 @@ autoplay = "idle"
 
 [node name="PlayerHitbox" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-1, 3, -3, 4, -7, 8, -7, 12, -6, 14, -5, 15, -3, 16, 9, 16, 11, 15, 14, 13, 14, 8, 13, 7, 11, 7, 8, 4, 5, 3)
+
+[node name="BubblerSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(-7, -5)
