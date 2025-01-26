@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bddp5fcdadpn7"
-path="res://.godot/imported/bolha_que_vai_em_volta_da_foca.png-f44ea9c30fed5d2155195e8b7d4fc56a.ctex"
+path="res://.godot/imported/bolha_que_vai_em_volta_da_foca.png-3e7cc1709ca7cd35c7a7e0fdd8bb04f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/players/bolha_que_vai_em_volta_da_foca.png"
-dest_files=["res://.godot/imported/bolha_que_vai_em_volta_da_foca.png-f44ea9c30fed5d2155195e8b7d4fc56a.ctex"]
+source_file="res://Assets/Players/bolha_que_vai_em_volta_da_foca.png"
+dest_files=["res://.godot/imported/bolha_que_vai_em_volta_da_foca.png-3e7cc1709ca7cd35c7a7e0fdd8bb04f7.ctex"]
 
 [params]
 

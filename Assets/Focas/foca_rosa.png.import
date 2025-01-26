@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6tqbeppkvapc"
-path="res://.godot/imported/focazul.png-9b05e6554d43c33bef5b5f3216aeaacf.ctex"
+uid="uid://d3v0yxk3jr2wr"
+path="res://.godot/imported/foca_rosa.png-ae6c0ebd2b9b99b634b4906fa621e643.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Players/focazul.png"
-dest_files=["res://.godot/imported/focazul.png-9b05e6554d43c33bef5b5f3216aeaacf.ctex"]
+source_file="res://Assets/Focas/foca_rosa.png"
+dest_files=["res://.godot/imported/foca_rosa.png-ae6c0ebd2b9b99b634b4906fa621e643.ctex"]
 
 [params]
 
