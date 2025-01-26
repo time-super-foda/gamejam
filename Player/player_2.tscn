@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" path="res://Player/player_2.gd" id="1_g2681"]
 [ext_resource type="Texture2D" uid="uid://6tqbeppkvapc" path="res://Assets/Players/focazul.png" id="2_ii2vl"]
-[ext_resource type="Shader" path="res://PlayerShaders.gdshader" id="2_n4vgt"]
+[ext_resource type="Shader" path="res://Player/player_2.gdshader" id="2_rmrla"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uqo01"]
-shader = ExtResource("2_n4vgt")
+shader = ExtResource("2_rmrla")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 0.75
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3xy1"]
 atlas = ExtResource("2_ii2vl")
