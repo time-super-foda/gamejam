@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @onready var player_sprite: AnimatedSprite2D = $PlayerSprite
+@onready var player_bubble: Sprite2D = player_sprite.get_child(0)
 @onready var bubble = preload("res://Player/bubble.tscn")
 @onready var bubble2 = preload("res://Player/bubble.tscn")
 
@@ -9,11 +10,16 @@ extends CharacterBody2D
 @export var enable_jump_upgrade = false
 @export var enable_umbrella_upgrade = false
 
+const PLAYER_NAME = "player1"
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 var has_air_jump = false
 var is_attacking = false
+var is_bubbled = false
+
+var player_timer = 0
+var bubble_mult = 1
 
 
 func _physics_process(delta: float) -> void:
@@ -27,6 +33,13 @@ func _physics_process(delta: float) -> void:
 	if velocity.x == 0.0 and velocity.y == 0.0 and !is_attacking:
 		player_sprite.play("idle")
 
+	if is_bubbled:
+		bubbled_player()
+	else:
+		moving_player()
+
+
+func moving_player():
 	# Handle refilling the double jump if the player has the upgrade.
 	if enable_jump_upgrade and is_on_floor():
 		has_air_jump = true
@@ -41,12 +54,12 @@ func _physics_process(delta: float) -> void:
 		player_sprite.play("walk")
 	movement_handling(player_direction)
 
-	move_and_slide()
-
 	# Handle shotting the bubbles.
 	if Input.is_action_just_pressed("player1_shoot"):
 		player_sprite.play("attack")
 		shoot_handling(enable_bubble_upgrade)
+	
+	move_and_slide()
 
 
 func jump_handling():
@@ -103,3 +116,34 @@ func shoot_handling(upgrade: bool):
 		bubble_instance2.direction = bubble_direction
 		bubble_instance2.player_origin = "player1"
 	is_attacking = false
+
+
+func bubbled_player():
+	player_bubble.visible = true
+	velocity.x = 0
+	velocity.y = -50
+	
+	print("Counter: ", player_timer)
+
+	if Input.is_action_just_pressed("player1_jump") or \
+	Input.is_action_just_pressed("player1_walk_left") or \
+	Input.is_action_just_pressed("player1_walk_left") or \
+	Input.is_action_just_pressed("player1_shoot"):
+		player_timer -= 1
+
+	if player_timer == 0:
+		bubble_mult += 1
+		is_bubbled = false
+		player_bubble.visible = false
+
+	move_and_slide()
+
+
+func _on_player_hurtbox_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Projectile"):
+		var shooter = area.get_parent().get_player_origin()
+
+		if shooter != PLAYER_NAME:
+			player_timer = 5 * bubble_mult
+			is_bubbled = true
+			print(PLAYER_NAME+ ": HIT from " + shooter)

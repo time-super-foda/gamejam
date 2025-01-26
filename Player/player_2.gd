@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var enable_jump_upgrade = false
 @export var enable_umbrella_upgrade = false
 
+const PLAYER_NAME = "player2"
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -103,3 +104,11 @@ func shoot_handling(upgrade: bool):
 		bubble_instance2.direction = bubble_direction
 		bubble_instance2.player_origin = "player2"
 	is_attacking = false
+
+
+func _on_player_hurtbox_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Projectile"):
+		var shooter = area.get_parent().get_player_origin()
+		
+		if shooter != PLAYER_NAME:
+			print(PLAYER_NAME+ ": HIT from " + shooter)
