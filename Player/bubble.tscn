@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf8rwymih5wa1"]
+
+[ext_resource type="Script" path="res://Player/bubble.gd" id="1_7hgsx"]
+[ext_resource type="Texture2D" uid="uid://cxo1gid0hkq1u" path="res://Assets/players/bolha_qubolha.png" id="2_ft3ie"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rscw2"]
+radius = 9.0
+
+[node name="Bubble" type="Sprite2D"]
+position = Vector2(16, 16)
+texture = ExtResource("2_ft3ie")
+script = ExtResource("1_7hgsx")
+
+[node name="BubbleArea" type="Area2D" parent="."]
+
+[node name="BubbleHitbox" type="CollisionShape2D" parent="BubbleArea"]
+shape = SubResource("CircleShape2D_rscw2")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
