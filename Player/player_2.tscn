@@ -1,7 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1phbld3sfw8a"]
+[gd_scene load_steps=13 format=3 uid="uid://dllld8iv7u1a5"]
 
 [ext_resource type="Script" path="res://Player/player_2.gd" id="1_g2681"]
-[ext_resource type="Texture2D" uid="uid://6tqbeppkvapc" path="res://Assets/players/focazul.png" id="2_ii2vl"]
+[ext_resource type="Texture2D" uid="uid://6tqbeppkvapc" path="res://Assets/Players/focazul.png" id="2_ii2vl"]
+[ext_resource type="Shader" path="res://Player/player_2.gdshader" id="2_rmrla"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uqo01"]
+shader = ExtResource("2_rmrla")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 0.75
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3xy1"]
 atlas = ExtResource("2_ii2vl")
@@ -75,11 +81,14 @@ position = Vector2(16, 16)
 script = ExtResource("1_g2681")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_uqo01")
 sprite_frames = SubResource("SpriteFrames_jhu6m")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="PlayerHitbox" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(-1, 3, -3, 4, -7, 8, -7, 12, -6, 14, -5, 15, -3, 16, 9, 16, 11, 15, 14, 13, 14, 8, 13, 7, 11, 7, 8, 4, 5, 3)
 
 [node name="BubblerSpawnPoint" type="Marker2D" parent="."]
