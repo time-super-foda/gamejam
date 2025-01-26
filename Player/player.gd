@@ -3,24 +3,28 @@ extends CharacterBody2D
 
 @onready var player_sprite: AnimatedSprite2D = $PlayerSprite
 @onready var bubble = preload("res://Player/bubble.tscn")
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@onready var bubble2 = preload("res://Player/bubble.tscn")
 
 @export var enable_bubble_upgrade = false
 @export var enable_jump_upgrade = false
 @export var enable_umbrella_upgrade = false
 
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
 var has_air_jump = false
-var bubble_instance
+var is_attacking = false
 
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		if enable_umbrella_upgrade:
+			velocity += (get_gravity() * delta) * 0.60
+		else:
+			velocity += get_gravity() * delta
 
-	if velocity.x == 0.0 and is_on_floor():
+	if velocity.x == 0.0 and velocity.y == 0.0 and !is_attacking:
 		player_sprite.play("idle")
 
 	# Handle refilling the double jump if the player has the upgrade.
@@ -33,13 +37,16 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	var player_direction := Input.get_axis("player1_walk_left", "player1_walk_right")
+	if Input.is_action_just_pressed("player1_walk_left") or Input.is_action_just_pressed("player1_walk_right"):
+		player_sprite.play("walk")
 	movement_handling(player_direction)
 
 	move_and_slide()
 
 	# Handle shotting the bubbles.
 	if Input.is_action_just_pressed("player1_shoot"):
-		shoot_handling()
+		player_sprite.play("attack")
+		shoot_handling(enable_bubble_upgrade)
 
 
 func jump_handling():
@@ -65,19 +72,34 @@ func movement_handling(direction: float):
 			player_sprite.flip_h = true
 
 		velocity.x = direction * SPEED
-		player_sprite.play("walk")
 	else:
 		# Stops the player and switches to the idle animation.
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 
-func shoot_handling():
+func shoot_handling(upgrade: bool):
+	is_attacking = true
+	
 	# Creates a bubble instance and binds it to the scene
-	bubble_instance = bubble.instantiate()
-	get_parent().add_child(bubble_instance)
+	var bubble_instance1 = bubble.instantiate()
+	get_parent().add_child(bubble_instance1)
 	
+	var bubble_spawn = $BubblerSpawnPoint.global_position
+	var bubble_direction = -1.0 if player_sprite.flip_h == false else 1.0
+
 	# Changes the position of the bubble to the right spawnpoint
-	bubble_instance.global_position = $BubblerSpawnPoint.global_position
-	
-	bubble_instance.direction = -1.0 if player_sprite.flip_h == false else 1.0
-	bubble_instance.player_origin = "player1"
+	bubble_instance1.global_position = bubble_spawn
+
+	bubble_instance1.direction = bubble_direction
+	bubble_instance1.player_origin = "player1"
+
+	# Creates the second bubble instance if the player has the upgrade
+	if upgrade:
+		var bubble_instance2 = bubble2.instantiate()
+		get_parent().add_child(bubble_instance2)
+
+		bubble_instance2.global_position = bubble_spawn - Vector2(10 * -bubble_direction, 15)
+
+		bubble_instance2.direction = bubble_direction
+		bubble_instance2.player_origin = "player1"
+	is_attacking = false

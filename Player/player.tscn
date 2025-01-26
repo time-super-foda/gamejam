@@ -52,9 +52,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i6k7e")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -83,12 +83,11 @@ script = ExtResource("1_ann3i")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_037ep")
 sprite_frames = SubResource("SpriteFrames_ibin3")
-animation = &"attack"
+animation = &"idle"
 autoplay = "walk"
-frame_progress = 0.887646
 
 [node name="PlayerHitbox" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-1, 4, -3, 5, -6, 8, -6, 12, -5, 14, -3, 15, 9, 15, 11, 14, 12, 12, 14, 12, 14, 10, 13, 8, 10, 8, 10, 7, 8, 5, 5, 4)
+polygon = PackedVector2Array(-1, 3, -3, 4, -7, 8, -7, 12, -6, 14, -5, 15, -3, 16, 9, 16, 11, 15, 14, 13, 14, 8, 13, 7, 11, 7, 8, 4, 5, 3)
 
 [node name="BubblerSpawnPoint" type="Marker2D" parent="."]
 position = Vector2(-7, -5)
