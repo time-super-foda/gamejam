@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=13 format=4 uid="uid://blmkrc05cflgv"]
 
 [ext_resource type="Texture2D" uid="uid://cbcg7d4arb7fh" path="res://Assets/Praia/praia_fundo.png" id="1_eodf0"]
@@ -176,3 +177,4 @@ scale = Vector2(0.75, 0.75)
 
 [connection signal="area_entered" from="teto" to="teto" method="_on_area_entered"]
 [connection signal="body_entered" from="teto" to="teto" method="_on_body_entered"]
+
