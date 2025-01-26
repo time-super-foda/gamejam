@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://gui.gd" id="1_7xj5p"]
 [ext_resource type="Theme" uid="uid://c71bwhya0d8n8" path="res://GUI_theme.tres" id="2_ajf7m"]
 [ext_resource type="FontFile" uid="uid://butwooe2qjsmr" path="res://Assets/Fonts/VT323-Regular.ttf" id="3_byx7f"]
-[ext_resource type="AudioStream" uid="uid://smdot7avjcah" path="res://Assets/Sound/hit.wav" id="3_wje7c"]
+[ext_resource type="AudioStream" uid="uid://b5o0xjdr4nd3d" path="res://Assets/Sound-track/bubbles-aeroMP3.mp3" id="4_l3k2c"]
 
 [sub_resource type="Image" id="Image_7vvrc"]
 data = {
@@ -1039,10 +1039,11 @@ offset_right = 791.0
 offset_bottom = 494.0
 theme = ExtResource("2_ajf7m")
 theme_override_fonts/font = ExtResource("3_byx7f")
-text = "Leaderboard"
+text = "Credits
+"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_wje7c")
+stream = ExtResource("4_l3k2c")
 
 [connection signal="pressed" from="Panel/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/leaderboard" to="." method="_on_leaderboard_pressed"]

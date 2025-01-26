@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=4 uid="uid://cukcxxb84lo8f"]
+[gd_scene load_steps=20 format=4 uid="uid://cukcxxb84lo8f"]
 
 [ext_resource type="Script" path="res://gui.gd" id="1_1jwox"]
 [ext_resource type="Theme" uid="uid://c71bwhya0d8n8" path="res://GUI_theme.tres" id="2_wdkka"]
 [ext_resource type="FontFile" uid="uid://butwooe2qjsmr" path="res://Assets/Fonts/VT323-Regular.ttf" id="3_8kuuh"]
-[ext_resource type="AudioStream" uid="uid://smdot7avjcah" path="res://Assets/Sound/hit.wav" id="4_hp2km"]
+[ext_resource type="Texture2D" uid="uid://cbcg7d4arb7fh" path="res://Assets/Praia/praia_fundo.png" id="4_cq2p0"]
+[ext_resource type="FontFile" uid="uid://cds2ga186ul8e" path="res://Assets/Fonts/Daily Bubble.ttf" id="5_83atv"]
+[ext_resource type="AudioStream" uid="uid://b5o0xjdr4nd3d" path="res://Assets/Sound-track/bubbles-aeroMP3.mp3" id="6_aeex6"]
 
 [sub_resource type="Image" id="Image_7vvrc"]
 data = {
@@ -1009,6 +1011,16 @@ Button/styles/hover = SubResource("StyleBoxTexture_h6ar2")
 Button/styles/normal = SubResource("StyleBoxTexture_15rvk")
 Button/styles/pressed = SubResource("StyleBoxTexture_h6ar2")
 
+[sub_resource type="Theme" id="Theme_w0qr8"]
+RichTextLabel/colors/default_color = Color(0.385902, 3.0202e-06, 0.259585, 1)
+RichTextLabel/font_sizes/normal_font_size = 46
+RichTextLabel/fonts/normal_font = ExtResource("5_83atv")
+
+[sub_resource type="Theme" id="Theme_nnhas"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 50
+RichTextLabel/fonts/normal_font = ExtResource("3_8kuuh")
+
 [node name="Gui" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -1018,22 +1030,107 @@ script = ExtResource("1_1jwox")
 texture_filter = 1
 texture_repeat = 1
 layout_mode = 0
-offset_right = 1276.0
-offset_bottom = 718.0
+offset_right = 1606.0
+offset_bottom = 805.0
 theme = SubResource("Theme_v4eao")
 
 [node name="leaderboard" type="Button" parent="Panel"]
 layout_mode = 2
-offset_left = 56.0
-offset_top = 562.0
-offset_right = 342.0
-offset_bottom = 665.0
+offset_left = 47.0
+offset_top = 652.0
+offset_right = 333.0
+offset_bottom = 755.0
 theme = ExtResource("2_wdkka")
 theme_override_fonts/font = ExtResource("3_8kuuh")
 text = "Voltar"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_hp2km")
+[node name="BG" type="ParallaxBackground" parent="Panel"]
+
+[node name="layer" type="ParallaxLayer" parent="Panel/BG"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/BG/layer"]
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(1.24766, 1.11806)
+texture = ExtResource("4_cq2p0")
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 61.0
+offset_right = 927.0
+offset_bottom = 176.0
+theme_override_colors/default_color = Color(0.226707, 0.226707, 0.226707, 1)
+theme_override_fonts/normal_font = ExtResource("5_83atv")
+theme_override_fonts/mono_font = ExtResource("3_8kuuh")
+theme_override_font_sizes/normal_font_size = 80
+text = "CREDITS"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 172.0
+offset_right = 868.0
+offset_bottom = 286.0
+theme = SubResource("Theme_w0qr8")
+text = "Desenvolvimento
+"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 478.0
+offset_right = 1020.0
+offset_bottom = 592.0
+theme = SubResource("Theme_w0qr8")
+text = "SoundDesign
+"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 827.0
+offset_top = 174.0
+offset_right = 1343.0
+offset_bottom = 288.0
+theme = SubResource("Theme_w0qr8")
+text = "Art Design"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 247.0
+offset_right = 739.0
+offset_bottom = 456.0
+theme = SubResource("Theme_nnhas")
+text = "Bernardo Hack
+Enzo Enrico
+Julia Tatim
+Laura Santos
+"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 530.0
+offset_right = 882.0
+offset_bottom = 602.0
+theme = SubResource("Theme_nnhas")
+text = "AfonsoRek
+
+"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 826.0
+offset_top = 234.0
+offset_right = 1201.0
+offset_bottom = 443.0
+theme = SubResource("Theme_nnhas")
+text = "Lívia Almeida
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_aeex6")
+autoplay = true
 
 [connection signal="pressed" from="Panel/leaderboard" to="." method="_on_back_principal_scene_pressed"]
-[connection signal="ready" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_ready"]
