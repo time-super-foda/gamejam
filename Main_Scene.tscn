@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://blmkrc05cflgv"]
+[gd_scene load_steps=10 format=4 uid="uid://blmkrc05cflgv"]
 
 [ext_resource type="Texture2D" uid="uid://cbcg7d4arb7fh" path="res://Assets/Praia/praia_fundo.png" id="1_eodf0"]
 [ext_resource type="PackedScene" uid="uid://dpayf5mbhj5yr" path="res://player_gui.tscn" id="1_twslc"]
 [ext_resource type="PackedScene" uid="uid://i34oo01u074n" path="res://Player/player.tscn" id="1_yo4eq"]
-[ext_resource type="Texture2D" uid="uid://x2jt7posfvwt" path="res://Assets/Praia/praia_1.png" id="2_inlyo"]
+[ext_resource type="Texture2D" uid="uid://7lnnbxhttis7" path="res://Assets/Praia/praia_1.png" id="2_inlyo"]
 [ext_resource type="PackedScene" uid="uid://c1phbld3sfw8a" path="res://Player/player_2.tscn" id="4_1yjyg"]
+[ext_resource type="PackedScene" uid="uid://crcgm03nan86y" path="res://upgrade_menu.tscn" id="4_w5fks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebj7w"]
 texture = ExtResource("2_inlyo")
@@ -72,6 +73,8 @@ offset_top = 351.0
 offset_right = 636.0
 offset_bottom = 351.0
 metadata/_edit_use_anchors_ = true
+
+[node name="upgrade_menu" parent="PlayerGui" instance=ExtResource("4_w5fks")]
 
 [node name="Player" parent="." instance=ExtResource("1_yo4eq")]
 position = Vector2(363, 508)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhi1irx15u0ta"
-path="res://.godot/imported/praia_1.png-f356f939d5e8003297505dddbec90ab4.ctex"
+uid="uid://bggtkbm034w1b"
+path="res://.godot/imported/fundo_preto.png-adcc5791cccac521eb9390228e0cfa0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Praia/praia_1.png"
-dest_files=["res://.godot/imported/praia_1.png-f356f939d5e8003297505dddbec90ab4.ctex"]
+source_file="res://Assets/Cor/fundo_preto.png"
+dest_files=["res://.godot/imported/fundo_preto.png-adcc5791cccac521eb9390228e0cfa0f.ctex"]
 
 [params]
 
