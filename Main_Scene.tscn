@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://blmkrc05cflgv"]
+[gd_scene load_steps=13 format=4 uid="uid://blmkrc05cflgv"]
 
 [ext_resource type="Texture2D" uid="uid://cbcg7d4arb7fh" path="res://Assets/Praia/praia_fundo.png" id="1_eodf0"]
 [ext_resource type="PackedScene" uid="uid://dpayf5mbhj5yr" path="res://player_gui.tscn" id="1_twslc"]
 [ext_resource type="PackedScene" uid="uid://i34oo01u074n" path="res://Player/player.tscn" id="1_yo4eq"]
 [ext_resource type="Texture2D" uid="uid://x2jt7posfvwt" path="res://Assets/Praia/praia_1.png" id="2_inlyo"]
 [ext_resource type="PackedScene" uid="uid://c1phbld3sfw8a" path="res://Player/player_2.tscn" id="4_1yjyg"]
+[ext_resource type="Script" path="res://teto.gd" id="4_ionlv"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="7_s2q6g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_usxb6"]
@@ -108,6 +109,9 @@ texture = ExtResource("2_inlyo")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_usxb6")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0y5k"]
+size = Vector2(1316, 20)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm4xn"]
 size = Vector2(25, 727)
 
@@ -128,6 +132,13 @@ tile_set = SubResource("TileSet_rx4r7")
 
 [node name="Player" parent="." instance=ExtResource("1_yo4eq")]
 position = Vector2(363, 508)
+
+[node name="teto" type="Area2D" parent="."]
+script = ExtResource("4_ionlv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teto"]
+position = Vector2(643, -4)
+shape = SubResource("RectangleShape2D_b0y5k")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -162,3 +173,6 @@ offset_top = 278.0
 offset_right = 631.0
 offset_bottom = 278.0
 scale = Vector2(0.75, 0.75)
+
+[connection signal="area_entered" from="teto" to="teto" method="_on_area_entered"]
+[connection signal="body_entered" from="teto" to="teto" method="_on_body_entered"]

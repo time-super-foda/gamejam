@@ -84,6 +84,7 @@ script = ExtResource("1_ann3i")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_037ep")
 sprite_frames = SubResource("SpriteFrames_ibin3")
+animation = &"attack"
 autoplay = "walk"
 
 [node name="PlayerHitbox" type="CollisionPolygon2D" parent="."]
