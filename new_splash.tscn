@@ -1,12 +1,14 @@
-[gd_scene load_steps=21 format=4 uid="uid://dx3d54kxpqrfm"]
+[gd_scene load_steps=23 format=4 uid="uid://dx3d54kxpqrfm"]
 
 [ext_resource type="Texture2D" uid="uid://cbcg7d4arb7fh" path="res://Assets/Praia/praia_fundo.png" id="1_j2v58"]
 [ext_resource type="Script" path="res://praia_fundo.gd" id="2_qapji"]
 [ext_resource type="Script" path="res://panel.gd" id="3_mwj6f"]
 [ext_resource type="Theme" uid="uid://c71bwhya0d8n8" path="res://GUI_theme.tres" id="4_8tkq0"]
 [ext_resource type="FontFile" uid="uid://butwooe2qjsmr" path="res://Assets/Fonts/VT323-Regular.ttf" id="5_2r1po"]
+[ext_resource type="Script" path="res://play.gd" id="5_gmlon"]
 [ext_resource type="AudioStream" uid="uid://smdot7avjcah" path="res://Assets/Sound/hit.wav" id="6_m815j"]
 [ext_resource type="Texture2D" uid="uid://14lmhi0bh12e" path="res://Assets/Focas/foca_azul.png" id="7_chhcm"]
+[ext_resource type="Script" path="res://credits.gd" id="7_swenc"]
 [ext_resource type="Script" path="res://focabouncer.gd" id="8_tn8kt"]
 [ext_resource type="Texture2D" uid="uid://d3v0yxk3jr2wr" path="res://Assets/Focas/foca_rosa.png" id="9_1u3i8"]
 
@@ -1053,6 +1055,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_8tkq0")
 text = "Play!"
+script = ExtResource("5_gmlon")
 
 [node name="credits" type="Button" parent="Panel"]
 layout_mode = 1
@@ -1070,6 +1073,7 @@ grow_vertical = 2
 theme = ExtResource("4_8tkq0")
 theme_override_fonts/font = ExtResource("5_2r1po")
 text = "Leaderboard"
+script = ExtResource("7_swenc")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_m815j")
