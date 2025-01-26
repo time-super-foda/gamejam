@@ -1,7 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://i34oo01u074n"]
+[gd_scene load_steps=13 format=3 uid="uid://i34oo01u074n"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ann3i"]
+[ext_resource type="Shader" path="res://Player/player_2.gdshader" id="2_4lhjr"]
 [ext_resource type="Texture2D" uid="uid://m375vp7pgik1" path="res://Assets/Players/foca..png" id="2_e86pw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_037ep"]
+shader = ExtResource("2_4lhjr")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 0.75
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wgdce"]
 atlas = ExtResource("2_e86pw")
@@ -75,6 +81,7 @@ position = Vector2(16, 16)
 script = ExtResource("1_ann3i")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_037ep")
 sprite_frames = SubResource("SpriteFrames_ibin3")
 animation = &"attack"
 autoplay = "walk"

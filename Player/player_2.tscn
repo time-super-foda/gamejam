@@ -81,6 +81,7 @@ position = Vector2(16, 16)
 script = ExtResource("1_g2681")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 material = SubResource("ShaderMaterial_uqo01")
 sprite_frames = SubResource("SpriteFrames_jhu6m")
 animation = &"idle"
