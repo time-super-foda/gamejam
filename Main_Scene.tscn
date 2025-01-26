@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://blmkrc05cflgv"]
+[gd_scene load_steps=12 format=4 uid="uid://blmkrc05cflgv"]
 
 [ext_resource type="Texture2D" uid="uid://cbcg7d4arb7fh" path="res://Assets/Praia/praia_fundo.png" id="1_eodf0"]
 [ext_resource type="PackedScene" uid="uid://dpayf5mbhj5yr" path="res://player_gui.tscn" id="1_twslc"]
 [ext_resource type="PackedScene" uid="uid://i34oo01u074n" path="res://Player/player.tscn" id="1_yo4eq"]
 [ext_resource type="Texture2D" uid="uid://x2jt7posfvwt" path="res://Assets/Praia/praia_1.png" id="2_inlyo"]
 [ext_resource type="PackedScene" uid="uid://c1phbld3sfw8a" path="res://Player/player_2.tscn" id="4_1yjyg"]
+[ext_resource type="AudioStream" uid="uid://bmj5jsk00pt0j" path="res://Assets/Sound-track/gameplay1.mp3" id="7_34tyu"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="7_s2q6g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_usxb6"]
@@ -162,3 +163,8 @@ offset_top = 278.0
 offset_right = 631.0
 offset_bottom = 278.0
 scale = Vector2(0.75, 0.75)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_34tyu")
+autoplay = true
+parameters/looping = false

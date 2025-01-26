@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://dx3d54kxpqrfm"]
+[gd_scene load_steps=24 format=4 uid="uid://dx3d54kxpqrfm"]
 
 [ext_resource type="Texture2D" uid="uid://cbcg7d4arb7fh" path="res://Assets/Praia/praia_fundo.png" id="1_j2v58"]
 [ext_resource type="Script" path="res://praia_fundo.gd" id="2_qapji"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://credits.gd" id="7_swenc"]
 [ext_resource type="Script" path="res://focabouncer.gd" id="8_tn8kt"]
 [ext_resource type="Texture2D" uid="uid://d3v0yxk3jr2wr" path="res://Assets/Focas/foca_rosa.png" id="9_1u3i8"]
+[ext_resource type="AudioStream" uid="uid://b5o0xjdr4nd3d" path="res://Assets/Sound-track/bubbles-aeroMP3.mp3" id="12_4yvd0"]
 
 [sub_resource type="Image" id="Image_t4iqc"]
 data = {
@@ -1035,6 +1036,7 @@ bounce_speed = 2.0
 [node name="Panel" type="Panel" parent="."]
 texture_filter = 1
 texture_repeat = 1
+layout_mode = 0
 offset_right = 1599.0
 offset_bottom = 805.0
 theme = SubResource("Theme_olevb")
@@ -1072,7 +1074,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_8tkq0")
 theme_override_fonts/font = ExtResource("5_2r1po")
-text = "Leaderboard"
+text = "Credits"
 script = ExtResource("7_swenc")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -1089,3 +1091,7 @@ position = Vector2(129, 687)
 scale = Vector2(3.95, 3.95)
 texture = ExtResource("9_1u3i8")
 script = ExtResource("8_tn8kt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_4yvd0")
+autoplay = true
