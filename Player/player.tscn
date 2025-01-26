@@ -97,6 +97,7 @@ shape = SubResource("RectangleShape2D_r1cyo")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_037ep")
 sprite_frames = SubResource("SpriteFrames_ibin3")
+animation = &"attack"
 autoplay = "walk"
 
 [node name="PlayerBubble" type="Sprite2D" parent="PlayerSprite"]
