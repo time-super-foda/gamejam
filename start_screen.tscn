@@ -1018,25 +1018,25 @@ script = ExtResource("1_7xj5p")
 texture_filter = 1
 texture_repeat = 1
 layout_mode = 0
-offset_right = 1276.0
-offset_bottom = 718.0
+offset_right = 1596.0
+offset_bottom = 799.0
 theme = SubResource("Theme_v4eao")
 
 [node name="play" type="Button" parent="Panel"]
 layout_mode = 2
-offset_left = 505.0
-offset_top = 282.0
-offset_right = 791.0
-offset_bottom = 380.0
+offset_left = 388.0
+offset_top = 226.0
+offset_right = 674.0
+offset_bottom = 324.0
 theme = ExtResource("2_ajf7m")
 text = "Play!"
 
 [node name="leaderboard" type="Button" parent="Panel"]
 layout_mode = 2
-offset_left = 505.0
-offset_top = 391.0
-offset_right = 791.0
-offset_bottom = 494.0
+offset_left = 390.0
+offset_top = 396.0
+offset_right = 676.0
+offset_bottom = 499.0
 theme = ExtResource("2_ajf7m")
 theme_override_fonts/font = ExtResource("3_byx7f")
 text = "Credits
