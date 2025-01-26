@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds07h38e3rbkq"]
+
+[ext_resource type="Texture2D" uid="uid://c2m8j5wckc4yv" path="res://Assets/upgrades/upgrade_chinelo-Sheet.png" id="1_h1abt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2cbg"]
+atlas = ExtResource("1_h1abt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_us5d7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2cbg")
+}],
+"loop": true,
+"name": &"item",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1h2c"]
+radius = 16.0
+
+[node name="Chinelo" type="Node2D" groups=["upgrades"]]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_us5d7")
+animation = &"item"
+
+[node name="Area2D" type="Area2D" parent="." groups=["upgrades"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_w1h2c")

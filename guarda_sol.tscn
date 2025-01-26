@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwouluiux7til"]
+
+[ext_resource type="Texture2D" uid="uid://ydie36jsvfmf" path="res://Assets/upgrades/upgrade_guarda_chuva-Sheet.png" id="1_i673e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdshy"]
+atlas = ExtResource("1_i673e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0luwy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdshy")
+}],
+"loop": true,
+"name": &"item",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ldrdw"]
+radius = 16.0
+
+[node name="GuardaSol" type="Node2D" groups=["upgrades"]]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0luwy")
+animation = &"item"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ldrdw")
